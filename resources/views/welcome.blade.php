@@ -80,6 +80,11 @@
             @endif
 
             <div class="content">
+                <div>
+                    @isset($name)
+                    {{$name}}
+                    @endisset
+                </div>
                 <div class="title m-b-md">
                     Laravel
                 </div>

@@ -14,9 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('/welcome','welcome', ['name'=>'1Ime']) 
+        ->where('name','[A-Za-z]+')
+        ->name('wilcomen');
+
 Route::get('/w/', function () {
     return "Heloo ja sam prva GET ruta!";
 });
-Route::get('/{ime}', function ($ime) {
+Route::get('/pozdrav/{ime}', function ($ime) {
     return "Dobrodoslaaaa ".$ime;
+});
+Route::get('/probna/','probnakontrola@probnaFun')
+        ->name('probna');
+Route::redirect('/here', 'there');
+Route::get('/there/', function () {
+    return "Redirect to there";
 });
