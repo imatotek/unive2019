@@ -9,3 +9,7 @@ php artisan migrate:refresh --seed
 
 
 Napraviti eloquvent
+
+php artisan tinker;
+$p=new Predmet;
+$p->all()->take(2);
