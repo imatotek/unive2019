@@ -30,3 +30,7 @@ Route::redirect('/here', 'there');
 Route::get('/there/', function () {
     return "Redirect to there";
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
