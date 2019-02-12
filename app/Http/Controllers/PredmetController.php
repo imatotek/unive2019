@@ -17,7 +17,7 @@ class PredmetController extends Controller
         $predmets=Predmet::all();
         //dd($predmets);
         echo '<ul>';
-        foreach(($predmet) as $key => $p) {
+        foreach(($predmets) as $key => $p) {
             echo '<li>'.$p->nazpred.'</li>';
             
         }
