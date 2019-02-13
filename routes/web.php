@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/childblade', function() {
+    return view('childprimjer');
+});
+Route::get('predmets/top10','PredmetController@top10');
 Route::resource('predmets','PredmetController');
 Route::get('/', function () {
     return view('welcome');

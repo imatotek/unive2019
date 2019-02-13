@@ -15,5 +15,3 @@ $p=new Predmet;
 $p->all()->take(2);
 
 php artisan db:seed --class=RezervacijasTableSeeder //napuniti tablicu
-
-fsdf
