@@ -16,13 +16,13 @@ class PredmetController extends Controller
     {
         $predmets=Predmet::all();
         //dd($predmets);
-        /*echo '<ul>';
+        echo '<ul>';
         foreach(($predmets) as $key => $p) {
             echo '<li>'.$p->nazpred.'</li>';
             
         }
-        echo '</ul>';*/
-        return view{'predmet.index',compact('predmets')};
+        echo '</ul>';
+        //return view{'predmet.index',compact('predmets')};
     }
 
     /**
