@@ -23,8 +23,14 @@ Link na ovu stranicu:<a href='{{url("/predmets/{$predmet->id}")}}'> {{$predmet->
 Kratica predmeta: <span class="badge badge-info">{{$predmet->kratpred }}</span><br>
 Upisano studenata: <span class="badge badge-warning">{{$predmet->upisanostud }}</span><br>
 Broj sati tjedno: <span class="badge badge-success">{{$predmet->brojsatitjedno }}</span><br>
-
-
+Broj rezervacije: <span class="badge badge-success">{{$predmet->rezervacije()->get()->count() }}</span><br>
+<ul>
+    @foreach ($predmet->rezervacije()->get() as $r)
+    <li>
+        <a href='{{ url("/rezervacije/{$r->id}")}}'><span class='label label-info'>Dan: {{$r->oznvrstadan}} sat: {{$r->sat}}</span></a>
+    </li>
+    @endforeach
+</ul>
 
 @endsection
 
