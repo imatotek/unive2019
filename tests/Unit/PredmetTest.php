@@ -2,27 +2,37 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Predmet;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
-class PredmetTest extends TestCase {
-
+class PredmetTest extends TestCase
+{
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testExample() {
-        $p3 = Predmet::has('rezervacije')->count();
-        $p1 = Predmet::doesnthave('rezervacije')->count();
-        $p2 = Predmet::with('rezervacije')->count();
-
-        $this->assertGreatThanOrEqual(1, $p1, 'Nema barem 1 predmet');
-        $this->assertGreatThanOrEqual(2, $p2, 'Nismo skužili');
-        $this->assertGreatThanOrEqual(3, $p3, 'Nema barem 1 predmet');
-
-        $this->assertTrue(true);
+    public function testExample()
+    {
+      $p1= Predmet::doesnthave('rezervacije')->count();
+      $p2= Predmet::with('rezervacije')->count();
+      $p3= Predmet::has('rezervacije')->count();  
+      
+      $this->assertGreaterThanOrEqual(1, $p1,
+        'Nema barem 1 predmeta koji nemaju  rezervaciju');
+      
+      $this->assertGreaterThanOrEqual(1, $p2,
+        'Nismo skuzili with ??? ');
+      
+      $this->assertGreaterThanOrEqual(1, $p3, 'Nema barem 1 predmeta sa rezervacijama');
+      
+      $this->assertTrue(true);
     }
-
+/* Pokušamo putem modela izlistitati sve njegove rezervacije */
+    public function testPredmetDoRezervacije() {
+        $p=Predmet::first()->rezervacije()->get()->count();
+        $this->assertGreaterThanOrEqual(0,$p, 'Veza predmet na rezervacije nije uspjela');
+    }
 }

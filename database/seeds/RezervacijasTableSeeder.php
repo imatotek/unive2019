@@ -1,5 +1,5 @@
 <?php
-// php artisan make:seeder RezervacijasTableSeeder
+//php artisan make:seeder RezervacijasTableSeeder
 
 use App\Rezervacija;
 use Illuminate\Database\Seeder;
@@ -13,7 +13,7 @@ class RezervacijasTableSeeder extends Seeder
      */
     public function run()
     {
-        Rezervacija::truncate();
-        factory(Rezervacija::class,250)->create();
+      Rezervacija::truncate();  // brise sve prethodne podatke
+      factory(Rezervacija::class, 250)->create();
     }
 }
