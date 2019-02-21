@@ -14,18 +14,19 @@ public function getOznvrstadanAttribute($value)
     {
     $dan='';
     switch ($value) {
-        case 'Po': $dan= 'Ponedjeljak'; break;
-        case 'Ut': $dan= 'Utorak'; break;
-        case 'Sr': $dan= 'Srijeda'; break;
-        case 'Ce': $dan= 'četvrtak'; break;
-        case 'Pe': $dan= 'Petak'; break;
+        case 'PO': $dan= 'Ponedjeljak'; break;
+        case 'UT': $dan= 'Utorak'; break;
+        case 'SR': $dan= 'Srijeda'; break;
+        case 'CE': $dan= 'Četvrtak'; break;
+        case 'PE': $dan= 'Petak'; break;
         
-        default: $dan='Greška';
+        default: $dan='Greška dana';
             break;
+    }
     return $dan;
     }
     
-    }
+    
 
 
 public function predmet()

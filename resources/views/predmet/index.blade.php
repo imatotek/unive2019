@@ -12,7 +12,9 @@
   </div>
 @endif 
 <h3>Lista predmeta:</h3>
-<ul>
+{{$predmets->links()}}
+<ol start="{{$predmets->firstItem()}}">
+    
   @foreach ($predmets as $p)
 
 
@@ -29,7 +31,7 @@
   </li>
 
   @endforeach
-</ul>
+</ol>
 
 
 @endsection

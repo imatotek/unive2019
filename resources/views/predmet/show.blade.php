@@ -27,7 +27,7 @@ Broj rezervacije: <span class="badge badge-success">{{$predmet->rezervacije()->g
 <ul>
     @foreach ($predmet->rezervacije()->get() as $r)
     <li>
-        <a href='{{ url("/rezervacije/{$r->id}")}}'><span class='label label-info'>Dan: {{$r->oznvrstadan}} sat: {{$r->sat}}</span></a>
+        <a href='{{ url("/rezervacije/{$r->id}")}}'><span class='label label-info'>Dan: {{$r->oznvrstadan}} <i class="far fa-clock"></i>: {{$r->sat}}</span></a>
     </li>
     @endforeach
 </ul>
@@ -36,6 +36,7 @@ Broj rezervacije: <span class="badge badge-success">{{$predmet->rezervacije()->g
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 @stop
 
 @section('js')

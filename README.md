@@ -15,3 +15,8 @@ git remote add upstream https://github.com/algebrateam/unive2019.git
 git fetch upstrem master  
 git reset --hard FETCH_HEAD  
 git clean -df  
+
+
+rute (routes->web.php) definiraju poddirektorije
+app->http->controllers - definira što se radi s varijablama koje web pošalje (php artisan make:controller perokontroler)
+app->php datoteke imaju poveznicu na bazu
